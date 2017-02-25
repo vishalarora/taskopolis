@@ -21,6 +21,7 @@ gem "suspenders"
 gem "title"
 gem "uglifier"
 gem "sprockets-rails", :require => "sprockets/railtie"
+gem "sprockets-commoner"
 
 group :development do
   gem "listen"
