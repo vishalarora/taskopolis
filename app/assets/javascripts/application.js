@@ -17,3 +17,4 @@
 
 let name = "josh";
 console.log('hello from ${name}');
+alert('test');
