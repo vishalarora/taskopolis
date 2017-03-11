@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/zapdigital/taskopolis#readme",
   "dependencies": {
-    "babel-core": "^6.23.1"
+    "babel-core": "^6.23.1",
+    "babel-preset-es2015": "^6.9.0"
   }
 }
