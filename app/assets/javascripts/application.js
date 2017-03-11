@@ -17,4 +17,4 @@
 //= require test
 
 let name = "josh"
-console.log('hello from ${name}')
+console.log(`hello from ${name}`)
