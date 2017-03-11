@@ -21,6 +21,8 @@ gem "suspenders"
 gem "title"
 gem "uglifier"
 gem "devise"
+gem "sprockets-rails"
+gem "sprockets-commoner"
 
 group :development do
   gem "listen"
