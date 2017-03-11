@@ -14,3 +14,6 @@
 //= require jquery_ujs
 
 //= require_tree .
+
+let name = "josh"
+console.log(`hello from ${name}`)
