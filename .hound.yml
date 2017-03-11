@@ -5,6 +5,7 @@ haml:
 javascript:
   # config_file: .javascript-style.json
   enabled: true
+  esversion: 6
   # ignore_file: .javascript_ignore
 ruby:
   # config_file: .ruby-style.yml
