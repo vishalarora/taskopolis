@@ -14,7 +14,7 @@
 //= require jquery_ujs
 
 //= require_tree .
+//= require test
 
-let name = "josh";
-console.log('hello from ${name}');
-alert('test');
+let name = "josh"
+console.log('hello from ${name}')
