@@ -12,11 +12,14 @@ your machine with [this script].
 
 [this script]: https://github.com/thoughtbot/laptop
 
-After setting up, you can run the application using [Heroku Local]:
+After setting up, you can run the application using [Heroku Local and rack-liveReload]:
 
     % heroku local
+    % bin/guard
 
 [Heroku Local]: https://devcenter.heroku.com/articles/heroku-local
+
+[Rack-LiveReload]: https://github.com/johnbintz/rack-livereload
 
 ## Guidelines
 

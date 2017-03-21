@@ -29,6 +29,10 @@ group :development do
   gem "spring"
   gem "spring-commands-rspec"
   gem "web-console"
+  gem "guard"
+  gem "guard-livereload"
+  gem "rack-livereload"
+  gem "rb-fsevent"
 end
 
 group :development, :test do
