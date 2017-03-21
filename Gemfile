@@ -30,6 +30,7 @@ group :development do
   gem "spring-commands-rspec"
   gem "web-console"
   gem "guard"
+  gem "guard-livereload"
 end
 
 group :development, :test do
