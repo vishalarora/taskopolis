@@ -23,6 +23,8 @@ gem "uglifier"
 gem "devise"
 gem "sprockets-rails"
 gem "sprockets-commoner"
+gem "slim"
+gem "slim-rails"
 
 group :development do
   gem "listen"
