@@ -47,7 +47,7 @@ RSpec.describe TasksController, type: :controller do
   describe "GET #show" do
     it "assigns the requested task as @task" do
       task = Task.create! valid_attributes
-      get :show, params: {id: task.to_param}, session: valid_session
+      get :show, params: { id: task.to_param }, session: valid_session
       expect(assigns(:task)).to eq(task)
     end
   end
@@ -62,7 +62,7 @@ RSpec.describe TasksController, type: :controller do
   describe "GET #edit" do
     it "assigns the requested task as @task" do
       task = Task.create! valid_attributes
-      get :edit, params: {id: task.to_param}, session: valid_session
+      get :edit, params: { id: task.to_param }, session: valid_session
       expect(assigns(:task)).to eq(task)
     end
   end
@@ -145,13 +145,13 @@ RSpec.describe TasksController, type: :controller do
     it "destroys the requested task" do
       task = Task.create! valid_attributes
       expect {
-        delete :destroy, params: {id: task.to_param}, session: valid_session
+        delete :destroy, params: { id: task.to_param }, session: valid_session
       }.to change(Task, :count).by(-1)
     end
 
     it "redirects to the tasks list" do
       task = Task.create! valid_attributes
-      delete :destroy, params: {id: task.to_param}, session: valid_session
+      delete :destroy, params: { id: task.to_param }, session: valid_session
       expect(response).to redirect_to(tasks_url)
     end
   end
