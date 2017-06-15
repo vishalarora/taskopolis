@@ -71,30 +71,30 @@ RSpec.describe TasksController, type: :controller do
     context "with valid params" do
       it "creates a new Task" do
         expect {
-          post :create, params: {task: valid_attributes}, session: valid_session
+          post :create, params: { task: valid_attributes }, session: valid_session
         }.to change(Task, :count).by(1)
       end
 
       it "assigns a newly created task as @task" do
-        post :create, params: {task: valid_attributes}, session: valid_session
+        post :create, params: { task: valid_attributes }, session: valid_session
         expect(assigns(:task)).to be_a(Task)
         expect(assigns(:task)).to be_persisted
       end
 
       it "redirects to the created task" do
-        post :create, params: {task: valid_attributes}, session: valid_session
+        post :create, params: { task: valid_attributes }, session: valid_session
         expect(response).to redirect_to(Task.last)
       end
     end
 
     context "with invalid params" do
       it "assigns a newly created but unsaved task as @task" do
-        post :create, params: {task: invalid_attributes}, session: valid_session
+        post :create, params: { task: invalid_attributes }, session: valid_session
         expect(assigns(:task)).to be_a_new(Task)
       end
 
       it "re-renders the 'new' template" do
-        post :create, params: {task: invalid_attributes}, session: valid_session
+        post :create, params: { task: invalid_attributes }, session: valid_session
         expect(response).to render_template("new")
       end
     end
@@ -108,20 +108,20 @@ RSpec.describe TasksController, type: :controller do
 
       it "updates the requested task" do
         task = Task.create! valid_attributes
-        put :update, params: {id: task.to_param, task: new_attributes}, session: valid_session
+        put :update, params: { id: task.to_param, task: new_attributes }, session: valid_session
         task.reload
         skip("Add assertions for updated state")
       end
 
       it "assigns the requested task as @task" do
         task = Task.create! valid_attributes
-        put :update, params: {id: task.to_param, task: valid_attributes}, session: valid_session
+        put :update, params: { id: task.to_param, task: valid_attributes }, session: valid_session
         expect(assigns(:task)).to eq(task)
       end
 
       it "redirects to the task" do
         task = Task.create! valid_attributes
-        put :update, params: {id: task.to_param, task: valid_attributes}, session: valid_session
+        put :update, params: { id: task.to_param, task: valid_attributes }, session: valid_session
         expect(response).to redirect_to(task)
       end
     end
@@ -129,13 +129,13 @@ RSpec.describe TasksController, type: :controller do
     context "with invalid params" do
       it "assigns the task as @task" do
         task = Task.create! valid_attributes
-        put :update, params: {id: task.to_param, task: invalid_attributes}, session: valid_session
+        put :update, params: { id: task.to_param, task: invalid_attributes }, session: valid_session
         expect(assigns(:task)).to eq(task)
       end
 
       it "re-renders the 'edit' template" do
         task = Task.create! valid_attributes
-        put :update, params: {id: task.to_param, task: invalid_attributes}, session: valid_session
+        put :update, params: { id: task.to_param, task: invalid_attributes }, session: valid_session
         expect(response).to render_template("edit")
       end
     end
