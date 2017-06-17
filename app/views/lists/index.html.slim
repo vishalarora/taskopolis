@@ -12,9 +12,9 @@ section.lists
           - else
             = link_to "No tasks yet.  Create one!", new_task_path
         .list-actions
-          = link_to 'Show', list
-          = link_to 'Edit', edit_list_path(list)
-          = link_to 'Destroy', list, data: { confirm: 'Are you sure?' }, method: :delete
+          = link_to "Show", list
+          = link_to "Edit", edit_list_path(list)
+          = link_to "Destroy", list, data: { confirm: "Are you sure?" }, method: :delete
 
 
 
