@@ -21,8 +21,6 @@ gem "suspenders"
 gem "title"
 gem "uglifier"
 gem "devise"
-gem "sprockets-rails"
-gem "sprockets-commoner"
 gem "slim"
 gem "slim-rails"
 
