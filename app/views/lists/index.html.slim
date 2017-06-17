@@ -10,7 +10,11 @@ table
   tbody
     - @lists.each do |list|
       tr
-        td = list.name
+        td
+          = list.name
+          ul
+           - list.tasks.each do |task|
+            li = task.description
         td = link_to 'Show', list
         td = link_to 'Edit', edit_list_path(list)
         td = link_to 'Destroy', list, data: { confirm: 'Are you sure?' }, method: :delete
