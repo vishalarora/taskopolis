@@ -15,4 +15,8 @@
   .field
     = f.label :complete
     = f.check_box :complete
+
+  .field
+    = f.collection_select :list_id, List.all, :id, :name
+
   .actions = f.submit
