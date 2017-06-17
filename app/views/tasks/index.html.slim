@@ -6,6 +6,7 @@ table
       th Description
       th Due date
       th Complete
+      th List
       th
       th
       th
@@ -16,6 +17,7 @@ table
         td = task.description
         td = task.due_date
         td = task.complete
+        td = task.list.name
         td = link_to 'Show', task
         td = link_to 'Edit', edit_task_path(task)
         td = link_to 'Destroy', task, data: { confirm: 'Are you sure?' }, method: :delete

@@ -1,0 +1,20 @@
+.lists {
+  display: flex;
+}
+
+.list {
+  border: 1px solid #000;
+  flex: 1;
+  max-width: 250px;
+  padding: 15px;
+
+  &:not(:last-child) {
+    margin-right: 15px;
+  }
+}
+
+.list-actions {
+  a {
+    display: block;
+  }
+}
