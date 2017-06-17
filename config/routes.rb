@@ -4,5 +4,5 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  root to: "taskopolis#index"
+  root to: "lists#index"
 end
