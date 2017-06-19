@@ -2,4 +2,5 @@ header
 	h1 = link_to "Taskopolis", root_path
 	nav
 		ul
-			li = link_to "Log out", "#"
+			- if user_signed_in?
+				li = link_to "Log out", destroy_user_session_path, method: :delete
