@@ -5,3 +5,27 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require "ffaker"
+
+# Users
+josh = User.create(email: "josh@joshstricklin.com",
+                   password: "p@ssw0rd",
+                   password_confirmation: "p@ssw0rd" )
+
+vishal = User.create(email: "vishal@vishalarora.com",
+                     password: "p@ssw0rd",
+                     password_confirmation: "p@ssw0rd" )
+
+# Lists & Tasks
+4.times do
+  list = List.create(name: FFaker::Skill.specialty)
+
+  rand(2..6).times do
+    Task.create(description: FFaker::Company.bs,
+                due_date: FFaker::Time.between(Time.now, Time.now + 1.year),
+                complete: false,
+                list: list,
+                user: [josh, vishal].sample)
+  end
+end
