@@ -47,6 +47,7 @@ group :development, :test do
 end
 
 group :development, :staging do
+  gem "ffaker"
   gem "rack-mini-profiler", require: false
 end
 
