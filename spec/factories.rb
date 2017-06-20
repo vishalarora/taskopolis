@@ -1,8 +1,5 @@
 FactoryGirl.define do
   factory :list do
-  end
-
-  factory :list do
     name "MyString"
   end
 
