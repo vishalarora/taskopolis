@@ -13,11 +13,9 @@ josh = User.create(email: "josh@joshstricklin.com",
                    password: "p@ssw0rd",
                    password_confirmation: "p@ssw0rd" )
 
-
 vishal = User.create(email: "vishal@vishalarora.com",
                      password: "p@ssw0rd",
                      password_confirmation: "p@ssw0rd" )
-
 
 # Lists & Tasks
 4.times do
@@ -25,10 +23,9 @@ vishal = User.create(email: "vishal@vishalarora.com",
 
   rand(2..6).times do
     Task.create(description: FFaker::Company.bs,
-                due_date: FFaker::Time.between(Time.now(), Time.now + 1.year),
+                due_date: FFaker::Time.between(Time.now, Time.now + 1.year),
                 complete: false,
                 list: list,
-                user: [josh, vishal].sample )
+                user: [josh, vishal].sample)
   end
-
 end
