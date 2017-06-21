@@ -12,11 +12,11 @@ require "ffaker"
 User.destroy_all
 
 # Users
-josh = User.create(email: "josh@joshstricklin.com",
+User.create(email: "josh@joshstricklin.com",
                    password: "p@ssw0rd",
                    password_confirmation: "p@ssw0rd")
 
-vishal = User.create(email: "vishal@vishalarora.com",
+User.create(email: "vishal@vishalarora.com",
                      password: "p@ssw0rd",
                      password_confirmation: "p@ssw0rd")
 
