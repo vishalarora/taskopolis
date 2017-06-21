@@ -4,7 +4,6 @@ ruby "2.3.1"
 
 gem "autoprefixer-rails"
 gem "flutie"
-gem "honeybadger"
 gem "jquery-rails"
 gem "normalize-rails", "~> 3.0.0"
 gem "pg"
@@ -14,7 +13,6 @@ gem "rails", "~> 5.0.0"
 gem "recipient_interceptor"
 gem "sass-rails", "~> 5.0"
 gem "simple_form"
-gem "skylight"
 gem "sprockets", ">= 3.0.0"
 gem "suspenders"
 gem "title"
@@ -50,7 +48,7 @@ group :development, :staging do
 end
 
 group :test do
-  gem "capybara-webkit"
+  gem "capybara"
   gem "database_cleaner"
   gem "formulaic"
   gem "launchy"
