@@ -13,12 +13,12 @@ User.destroy_all
 
 # Users
 User.create(email: "josh@joshstricklin.com",
-                   password: "p@ssw0rd",
-                   password_confirmation: "p@ssw0rd")
+            password: "p@ssw0rd",
+            password_confirmation: "p@ssw0rd")
 
 User.create(email: "vishal@vishalarora.com",
-                     password: "p@ssw0rd",
-                     password_confirmation: "p@ssw0rd")
+            password: "p@ssw0rd",
+            password_confirmation: "p@ssw0rd")
 
 # Lists & Tasks
 4.times do
