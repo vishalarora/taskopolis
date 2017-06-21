@@ -22,13 +22,14 @@ vishal = User.create(email: "vishal@vishalarora.com",
 
 # Lists & Tasks
 4.times do
-  list = List.create(name: FFaker::Skill.specialty)
+  user = User.order("RANDOM()").first
+  list = List.create(name: FFaker::Skill.specialty, user_id: user.id)
 
   rand(2..6).times do
     Task.create(description: FFaker::Company.bs,
                 due_date: FFaker::Time.between(Time.now, Time.now + 1.year),
                 complete: false,
-                list: list,
-                user: [josh, vishal].sample)
+                list_id: list.id,
+                user_id: user.id)
   end
 end
