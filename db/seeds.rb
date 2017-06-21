@@ -9,9 +9,7 @@
 require "ffaker"
 
 # Clear the DB
-User.delete_all
-List.delete_all
-Task.delete_all
+User.destroy_all
 
 # Users
 josh = User.create(email: "josh@joshstricklin.com",
