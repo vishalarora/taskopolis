@@ -49,8 +49,12 @@ group :development, :staging do
   gem "rack-mini-profiler", require: false
 end
 
+group :development, :staging, :test do
+  gem "ffaker"
+end
+
 group :test do
-  gem "capybara-webkit"
+  gem "capybara"
   gem "database_cleaner"
   gem "formulaic"
   gem "launchy"
