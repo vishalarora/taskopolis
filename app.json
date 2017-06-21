@@ -1,7 +1,7 @@
 {
   "name":"taskopolis",
   "scripts":{
-    "postdeploy": "bundle exec rake db:migrate db:seed"
+    "postdeploy": "heroku pg:reset && bundle exec rake db:migrate db:seed"
   },
   "env":{
     "APPLICATION_HOST":{
