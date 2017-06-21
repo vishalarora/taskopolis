@@ -8,6 +8,11 @@
 
 require "ffaker"
 
+# Clear the DB
+User.delete_all
+List.delete_all
+Task.delete_all
+
 # Users
 josh = User.create(email: "josh@joshstricklin.com",
                    password: "p@ssw0rd",
