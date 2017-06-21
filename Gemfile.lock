@@ -67,9 +67,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    capybara-webkit (1.11.1)
-      capybara (>= 2.3.0, < 2.8.0)
-      json
     coderay (1.1.1)
     concurrent-ruby (1.0.4)
     crack (0.4.3)
@@ -99,6 +96,7 @@ GEM
     factory_girl_rails (4.8.0)
       factory_girl (~> 4.8.0)
       railties (>= 3.0.0)
+    ffaker (2.5.0)
     ffi (1.9.14)
     flutie (2.0.0)
     formatador (0.2.5)
@@ -314,11 +312,12 @@ DEPENDENCIES
   awesome_print
   bullet
   bundler-audit (>= 0.5.0)
-  capybara-webkit
+  capybara
   database_cleaner
   devise
   dotenv-rails
   factory_girl_rails
+  ffaker
   flutie
   formulaic
   guard
