@@ -1,5 +1,7 @@
 p#notice = notice
-
+p
+  strong Owner:
+  = @task.user.email
 p
   strong Description:
   = @task.description
@@ -11,5 +13,5 @@ p
   = @task.complete
 
 = link_to 'Edit', edit_task_path(@task)
-'|
-= link_to 'Back', tasks_path
+'&nbsp;|
+= link_to 'All tasks', tasks_path
