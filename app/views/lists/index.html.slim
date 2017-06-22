@@ -3,7 +3,7 @@ h1 My Lists
 section.lists
   - @lists.each do |list|
     .list
-        .list-name = list.name
+        .list-name = link_to list.name, list_path(list)
         ul.tasks
           - if list.tasks.present?
             - list.tasks.each do |task|
@@ -15,8 +15,6 @@ section.lists
           = link_to "Show", list
           = link_to "Edit", edit_list_path(list)
           = link_to "Destroy", list, data: { confirm: "Are you sure?" }, method: :delete
-
-
 
 br
 

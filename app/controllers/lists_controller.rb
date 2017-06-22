@@ -1,8 +1,9 @@
 class ListsController < ApplicationController
   before_action :set_list, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   def index
-    @lists = List.all
+    @lists = current_user.lists
   end
 
   def show
@@ -45,6 +46,6 @@ class ListsController < ApplicationController
   end
 
   def list_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, :user_id)
   end
 end
