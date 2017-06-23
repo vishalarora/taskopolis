@@ -4,8 +4,11 @@
 
 .list {
   border: 1px solid #000;
+  display: flex;
   flex: 1;
-  max-width: 250px;
+  flex-direction: column;
+  max-width: 300px;
+  min-width: 250px;
   padding: 15px;
 
   &:not(:last-child) {
