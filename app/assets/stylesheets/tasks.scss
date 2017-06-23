@@ -1,4 +1,5 @@
 .tasks {
+  flex: 1;
   list-style: none;
   padding: 0;
 }
@@ -7,6 +8,22 @@
   &:checked {
     ~ a {
       text-decoration: line-through;
+    }
+  }
+}
+
+.task {
+  .due-date {
+    background: rgba(0, 0, 0, .1);
+    border-radius: 2px;
+    color: rgba(0, 0, 0, .8);
+    display: inline-block;
+    font-size: 12px;
+    margin: 0 .5em;
+    padding: .25em .5rem;
+
+    &.past-due {
+      background: rgba(255, 0, 0, .2);
     }
   }
 }
