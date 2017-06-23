@@ -18,7 +18,7 @@ section.lists
                   noscript
                     = f.submit
 
-                  = link_to "Task #{task.id}: #{task.description}", task_path(task), class: ('completed' if task.complete?)
+                  = link_to "#{task.description}", task_path(task), class: ('completed' if task.complete?)
           - else
             = link_to "No tasks yet.  Create one!", new_task_path
         .list-actions
