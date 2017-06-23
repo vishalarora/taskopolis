@@ -18,10 +18,16 @@ User.create(email: "vishal@vishalarora.com",
   list = List.create(name: FFaker::Skill.specialty, user_id: user.id)
 
   rand(2..6).times do
-    Task.create(description: FFaker::Company.bs,
-                due_date: FFaker::Time.between(Time.now - 2.days, Time.now + 1.year).to_date,
-                complete: false,
-                list_id: list.id,
-                user_id: user.id)
+    set_due_date = [true, false].sample
+
+    task = Task.create(description: FFaker::Company.bs,
+                       complete: false,
+                       list_id: list.id,
+                       user_id: user.id)
+
+    if set_due_date
+      task.due_date = FFaker::Time.between(Time.now - 1.week, Time.now + 2.months).to_date
+      task.save!
+    end
   end
 end
