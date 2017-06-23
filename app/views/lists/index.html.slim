@@ -6,9 +6,19 @@ section.lists
         .list-name = link_to list.name, list_path(list)
         ul.tasks
           - if list.tasks.present?
-            - list.tasks.each do |task|
-              li.task
-                = link_to "Task #{task.id}: #{task.description}", task_path(task)
+            - list.tasks.order(:complete).each do |task|
+              = form_for task, remote: true do |f|
+                - if task.errors.any?
+                  #error_explanation
+                    ul
+                      - task.errors.full_messages.each do |message|
+                        li = message
+                li.task
+                  = f.check_box :complete, onChange: "$(this.form).submit()", class: "task-complete-checkbox"
+                  noscript
+                    = f.submit
+
+                  = link_to "Task #{task.id}: #{task.description}", task_path(task), class: ('completed' if task.complete?)
           - else
             = link_to "No tasks yet.  Create one!", new_task_path
         .list-actions

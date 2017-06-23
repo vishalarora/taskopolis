@@ -7,6 +7,7 @@ class ListsController < ApplicationController
   end
 
   def show
+    @tasks = @list.tasks.order(:complete)
   end
 
   def new
