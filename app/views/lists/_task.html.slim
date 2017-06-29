@@ -10,5 +10,7 @@
       = f.submit
 
     = link_to "#{task.description}", task_path(task), class: ('completed' if task.complete?)
-    span.due-date [class=("past-due" if task.due_date < Date.today)]
-      = "Due: #{pretty_date task.due_date}"
+
+    - if task.due_date
+      span.due-date [class=("past-due" if task.due_date < Date.today)]
+        = "Due: #{pretty_date task.due_date}"
