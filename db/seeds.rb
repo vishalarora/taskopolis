@@ -4,11 +4,15 @@ require "ffaker"
 User.destroy_all
 
 # Users
-User.create(email: "josh@joshstricklin.com",
+User.create(first_name: "Josh",
+            last_name: "Stricklin",
+            email: "josh@joshstricklin.com",
             password: "p@ssw0rd",
             password_confirmation: "p@ssw0rd")
 
-User.create(email: "vishal@vishalarora.com",
+User.create(first_name: "Vishal",
+            last_name: "Arora",
+            email: "vishal@vishalarora.com",
             password: "p@ssw0rd",
             password_confirmation: "p@ssw0rd")
 
