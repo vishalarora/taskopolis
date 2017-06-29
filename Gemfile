@@ -20,6 +20,7 @@ gem "uglifier"
 gem "devise"
 gem "slim"
 gem "slim-rails"
+gem "raygun4ruby"
 
 group :development do
   gem "listen"
