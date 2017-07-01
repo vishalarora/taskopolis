@@ -16,6 +16,12 @@ User.create(first_name: "Vishal",
             password: "p@ssw0rd",
             password_confirmation: "p@ssw0rd")
 
+# Resources
+resources = ["Wood", "Steel", "Stone", "Glass", "Bricks"]
+resources.each_with_index do |resource, index|
+  Resource.create(name: resources[index], value: index * 100)
+end
+
 # Lists & Tasks
 6.times do
   user = User.order("RANDOM()").first
