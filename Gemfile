@@ -21,11 +21,8 @@ gem "devise"
 gem "sidekiq"
 gem "slim"
 gem "slim-rails"
-<<<<<<< HEAD
 gem "raygun4ruby"
-=======
 gem "high_voltage"
->>>>>>> install High Voltage gem
 
 group :development do
   gem "listen"
