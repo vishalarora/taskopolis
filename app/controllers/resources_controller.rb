@@ -1,5 +1,7 @@
 class ResourcesController < ApplicationController
   before_action :set_resource, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :check_admin_permissions
 
   def index
     @resources = Resource.all
