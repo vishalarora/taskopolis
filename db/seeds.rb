@@ -16,9 +16,21 @@ User.create(first_name: "Vishal",
             password: "p@ssw0rd",
             password_confirmation: "p@ssw0rd")
 
+# Admin
+User.create(email: "admin@taskopolis.com",
+            password: "p@ssw0rd",
+            password_confirmation: "p@ssw0rd",
+            admin: true)
+
+# Resources
+resources = ["Wood", "Steel", "Stone", "Glass", "Bricks"]
+resources.each_with_index do |resource, index|
+  Resource.create(name: resources[index], value: index * 100)
+end
+
 # Lists & Tasks
 6.times do
-  user = User.order("RANDOM()").first
+  user = User.where(admin: false).order("RANDOM()").first
   list = List.create(name: FFaker::Skill.specialty, user_id: user.id)
 
   rand(2..6).times do
