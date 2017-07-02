@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :resources, except: :show
   resources :lists
   resources :tasks
 
