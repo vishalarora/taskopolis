@@ -11,5 +11,7 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => "/jobs"
   end
 
-  root to: "lists#index"
+  authenticated :user do
+    root :to => "lists#index"
+  end
 end
