@@ -14,3 +14,7 @@
     - if task.due_date
       span.due-date [class=("past-due" if task.due_date < Date.today)]
         = "Due: #{pretty_date task.due_date}"
+
+    - if task.point_value
+      span.point_value
+        = "#{task.point_value} point"

@@ -4,4 +4,8 @@ class Task < ApplicationRecord
 
   validates :description, presence: true
 
+  after_create do
+    update_attribute :point_value, 1
+  end
+
 end
