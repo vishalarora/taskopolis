@@ -22,6 +22,7 @@ gem "sidekiq"
 gem "slim"
 gem "slim-rails"
 gem "raygun4ruby"
+gem "high_voltage"
 
 group :development do
   gem "listen"

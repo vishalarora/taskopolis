@@ -123,6 +123,7 @@ GEM
       guard-compat (~> 1.0)
       multi_json (~> 1.8)
     hashdiff (0.3.2)
+    high_voltage (3.0.0)
     http_parser.rb (0.6.0)
     httparty (0.15.5)
       multi_xml (>= 0.5.2)
@@ -343,6 +344,7 @@ DEPENDENCIES
   formulaic
   guard
   guard-livereload
+  high_voltage
   jquery-rails
   launchy
   listen
