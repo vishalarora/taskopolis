@@ -23,9 +23,10 @@ User.create(email: "admin@taskopolis.com",
             admin: true)
 
 # Resources
+Resource.destroy_all
 resources = ["Wood", "Steel", "Stone", "Glass", "Bricks"]
 resources.each_with_index do |resource, index|
-  Resource.create(name: resources[index], value: index * 100)
+  Resource.create(name: resources[index], value: [(index  * 100), 1].max)
 end
 
 # Lists & Tasks
