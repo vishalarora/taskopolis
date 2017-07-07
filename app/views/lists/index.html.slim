@@ -1,4 +1,7 @@
 section.lists
+  .list.resources
+    = render 'resources/list'
+
   - @lists.each do |list|
     .list
         .list-name = link_to list.name, list_path(list)
