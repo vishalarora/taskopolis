@@ -1,0 +1,18 @@
+.marketplace
+  h3 Marketplace
+
+  table cellspacing="0" cellpadding="0"
+    thead
+      tr
+        th
+        th.resource-value Value
+        th
+        th
+
+    tbody
+      - @resources.each do |resource|
+        tr
+          td.resource-name = resource.name
+          td.resource-value
+            span Ж
+            = resource.value

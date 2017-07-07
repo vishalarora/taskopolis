@@ -1,0 +1,41 @@
+.marketplace {
+  h3 {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .33px;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+  }
+
+  table {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  th {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    opacity: .5;
+    text-align: left;
+    text-transform: uppercase;
+  }
+
+  td {
+    border-bottom: 1px solid #eee;
+
+    span {
+      display: inline-block;
+      font-size: 10px;
+      line-height: 16px;
+      margin-right: 3px;
+      opacity: .5;
+      vertical-align: middle;
+    }
+  }
+
+  .resource-value {
+    text-align: right;
+  }
+}
