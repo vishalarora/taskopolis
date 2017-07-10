@@ -46,6 +46,9 @@ class TasksController < ApplicationController
   end
 
   def incomplete
+    @task.update_attribute(:complete, false)
+    redirect_to root_path
+    current_user.subtract_points(1)
   end
 
   private
