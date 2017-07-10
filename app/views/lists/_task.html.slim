@@ -22,10 +22,12 @@
         li = message
 
 li.task
-  => link_to "#{task.description}", task_path(task), class: ('completed' if task.complete?)
+  = link_to complete_task_path(task, task.id), method: :patch do
+    input type="checkbox"
+  end
+
+  = link_to "#{task.description}", task_path(task), class: ('completed' if task.complete?)
 
   - if task.due_date
     span.due-date [class=("past-due" if task.due_date < Date.today)]
       = "Due: #{pretty_date task.due_date}"
-
-  = link_to "Done", complete_task_path(task, task.id), method: :patch

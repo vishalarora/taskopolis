@@ -41,8 +41,11 @@ class TasksController < ApplicationController
 
   def complete
     @task.update_attribute(:complete, true)
-    redirect_to root_path, notice: "Completed #{@task.description}!"
+    redirect_to root_path
     current_user.add_points(1)
+  end
+
+  def incomplete
   end
 
   private
