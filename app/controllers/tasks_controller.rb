@@ -40,15 +40,15 @@ class TasksController < ApplicationController
   end
 
   def complete
-    @task.update_attribute(:complete, true)
-    redirect_to root_path
-    current_user.add_points(1)
-  end
-
-  def incomplete
-    @task.update_attribute(:complete, false)
-    redirect_to root_path
-    current_user.subtract_points(1)
+    if @task.complete?
+      @task.update_attribute(:complete, false)
+      redirect_to root_path
+      current_user.subtract_points(1)
+    else
+      @task.update_attribute(:complete, true)
+      redirect_to root_path
+      current_user.add_points(1)
+    end
   end
 
   private
