@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       patch :complete
     end
   end
-  
+
   namespace :admin do
     mount Sidekiq::Web => "/jobs"
   end
