@@ -12,6 +12,10 @@
   }
 }
 
+.completed {
+  text-decoration: line-through;
+}
+
 .task {
   .due-date {
     background: rgba(0, 0, 0, .1);

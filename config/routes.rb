@@ -5,7 +5,11 @@ Rails.application.routes.draw do
 
   resources :resources, except: :show
   resources :lists
-  resources :tasks
+  resources :tasks do
+    member do
+      patch :complete
+    end
+  end
 
   namespace :admin do
     mount Sidekiq::Web => "/jobs"

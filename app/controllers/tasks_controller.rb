@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_task, only: [:show, :edit, :update, :destroy, :complete]
   before_action :authenticate_user!
 
   def index
@@ -37,6 +37,18 @@ class TasksController < ApplicationController
   def destroy
     @task.destroy
     redirect_to tasks_url, notice: "Task was successfully destroyed."
+  end
+
+  def complete
+    if @task.complete?
+      @task.update_attribute(:complete, false)
+      redirect_to root_path
+      current_user.subtract_points(1)
+    else
+      @task.update_attribute(:complete, true)
+      redirect_to root_path
+      current_user.add_points(1)
+    end
   end
 
   private
