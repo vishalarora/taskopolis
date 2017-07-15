@@ -1,0 +1,2 @@
+class TaskActionsController < ApplicationController
+end
