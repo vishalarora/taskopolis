@@ -1,6 +1,10 @@
 class TaskActionsController < ApplicationController
 before_action :set_task, only: [:create, :destroy, :toggle_complete]
 
+  def new
+    @task_action = TaskAction.new
+  end
+
   def create
     @task_action = TaskAction.new(task_action_params)
   end
