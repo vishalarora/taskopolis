@@ -8,9 +8,9 @@ before_action :set_task, only: [:create, :destroy, :toggle_complete]
   def create
     @task_action = TaskAction.new(task_action_params)
     if @task_action.type === 'complete'
-      mark_as_complete
+      @task.mark_as_complete
     elsif @task_action.type === 'incomplete'
-      mark_as_incomplete
+      @task.mark_as_incomplete
     end
   end
 
@@ -29,6 +29,4 @@ before_action :set_task, only: [:create, :destroy, :toggle_complete]
                                         :user_id)
   end
 
-  def toggle_complete
-  end
 end
