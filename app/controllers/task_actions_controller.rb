@@ -1,5 +1,5 @@
 class TaskActionsController < ApplicationController
-before_action :set_task, only: [:create, :destroy, :toggle_complete]
+  before_action :set_task, only: [:create, :destroy]
 
   def new
     @task_action = TaskAction.new
@@ -7,14 +7,11 @@ before_action :set_task, only: [:create, :destroy, :toggle_complete]
 
   def create
     @task_action = TaskAction.new(task_action_params)
-    if @task_action.type === 'complete'
-      @task.mark_as_complete
-    elsif @task_action.type === 'incomplete'
-      @task.mark_as_incomplete
-    end
+    @task.mark_as_complete
   end
 
   def destroy
+    @task.mark_as_incomplete
   end
 
   private
@@ -24,8 +21,7 @@ before_action :set_task, only: [:create, :destroy, :toggle_complete]
   end
 
   def task_action_params
-    params.require(:task_action).permit(:type,
-                                        :task_id,
+    params.require(:task_action).permit(:task_id,
                                         :user_id)
   end
 

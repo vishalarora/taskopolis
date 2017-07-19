@@ -81,7 +81,6 @@ ActiveRecord::Schema.define(version: 20170719061503) do
   create_table "task_actions", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "type_of"
     t.integer  "task_id"
     t.integer  "user_id"
   end
