@@ -8,6 +8,7 @@ class TaskActionsController < ApplicationController
   def create
     @task_action = TaskAction.new(task_action_params)
     @task.mark_as_complete
+    puts "testing"
   end
 
   def destroy
@@ -17,7 +18,7 @@ class TaskActionsController < ApplicationController
   private
 
   def set_task
-    @task = task.find.(params[:id])
+    @task = Task.find(params[:id])
   end
 
   def task_action_params

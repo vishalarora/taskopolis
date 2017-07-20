@@ -1,0 +1,9 @@
+= form_for @task_action do |f|
+
+  .field
+    = f.collection_select :task_action, :task_id, Task.all, :id, :description
+
+  .field
+    = f.hidden_field :user_id, value: current_user.id
+
+  .actions = f.submit
