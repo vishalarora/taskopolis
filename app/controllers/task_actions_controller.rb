@@ -11,8 +11,12 @@ class TaskActionsController < ApplicationController
 
   def create
     @task_action = TaskAction.new(task_action_params)
-    # @task.mark_as_complete
-    puts "testing"
+
+    if @task_action.save
+      redirect_to task_path(@task_action.task), notice: "Task action was successfully created."
+    else
+      render :new
+    end
   end
 
   def destroy
