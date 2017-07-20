@@ -1,5 +1,9 @@
 class TaskActionsController < ApplicationController
-  before_action :set_task, only: [:create, :destroy]
+  # before_action :set_task, only: [:create, :destroy]
+
+  def index
+    @task_actions = TaskAction.all
+  end
 
   def new
     @task_action = TaskAction.new
@@ -7,7 +11,7 @@ class TaskActionsController < ApplicationController
 
   def create
     @task_action = TaskAction.new(task_action_params)
-    @task.mark_as_complete
+    # @task.mark_as_complete
     puts "testing"
   end
 
