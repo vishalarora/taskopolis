@@ -5,7 +5,7 @@
         li = message
 
 li.task
-  = link_to task_actions_path() do
+  = link_to task_actions_path(task.id), method: :post do
     input [type="checkbox" checked=(true if task.complete?)]
   end
   
