@@ -1,22 +1,24 @@
 class TaskActionsController < ApplicationController
   # before_action :set_task, only: [:create, :destroy]
 
-  def index
-    @task_actions = TaskAction.all
-  end
-
-  def new
-    @task_action = TaskAction.new
-  end
+  # def new
+  #   @task_action = TaskAction.new
+  # end
 
   def create
     @task_action = TaskAction.new(task_action_params)
 
     if @task_action.save
-      redirect_to task_path(@task_action.task), notice: "Task action was successfully created."
-      @task_action.task.mark_as_complete
+      redirect_to :back, notice: "Task action was successfully created."
+
+      if @task_action.action === "mark_complete"
+        @task_action.task.mark_complete
+      else
+        @task_action.task.mark_incomplete
+      end
+
     else
-      render :new
+      redirect_to :back, alert: "Oops, something went wrong.  Try that again."
     end
   end
 
@@ -31,8 +33,6 @@ class TaskActionsController < ApplicationController
   end
 
   def task_action_params
-    params.require(:task_action).permit(:task_id,
-                                        :user_id)
+    params.require(:task_action).permit(:task_id, :user_id, :action)
   end
-
 end

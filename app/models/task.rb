@@ -5,11 +5,12 @@ class Task < ApplicationRecord
 
   validates :description, presence: true
 
-  def mark_as_complete
-    self.update(complete: true)
+  def mark_complete
+    self.update!(complete: true)
   end
 
-  def mark_as_incomplete
-    self.update(complete: false)
+  def mark_incomplete
+    self.update!(complete: false)
   end
+
 end

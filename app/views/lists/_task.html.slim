@@ -5,13 +5,28 @@
         li = message
 
 li.task
-  = link_to task_actions_path(task.id), method: :post do
-    input [type="checkbox" checked=(true if task.complete?)]
-  end
-  
-  = link_to "#{task.description}", task_path(task), class: ('completed' if task.complete?)
+
+  = form_for TaskAction.new do |f|
+
+    - if task.complete?
+      = f.button :submit do
+        | ✓
+        end
+    - else
+      = f.button :submit do
+        |
+        end
+
+
+    = f.hidden_field :action, value: type_of_action_when(task.complete?)
+    = f.hidden_field :task_id, value: task.id
+    = f.hidden_field :user_id, value: current_user.id
+
+
+    = link_to "#{task.description}", task_path(task), class: ("completed" if task.complete?)
+
 
   - if task.due_date
     span.due-date [class=("past-due" if task.due_date < Date.today)]
       = "Due: #{pretty_date task.due_date}"
-      
+
