@@ -52,12 +52,4 @@ class TasksController < ApplicationController
                                  :list_id,
                                  :user_id)
   end
-
-  def mark_as_complete
-    @task.complete = true
-  end
-
-  def mark_as_incomplete
-    @task.complete = false
-  end
 end

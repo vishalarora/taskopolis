@@ -14,6 +14,7 @@ class TaskActionsController < ApplicationController
 
     if @task_action.save
       redirect_to task_path(@task_action.task), notice: "Task action was successfully created."
+      @task_action.task.mark_as_complete
     else
       render :new
     end
