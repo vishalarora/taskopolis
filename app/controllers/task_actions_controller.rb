@@ -1,9 +1,4 @@
 class TaskActionsController < ApplicationController
-  # before_action :set_task, only: [:create, :destroy]
-
-  # def new
-  #   @task_action = TaskAction.new
-  # end
 
   def create
     @task_action = TaskAction.new(task_action_params)
@@ -27,10 +22,6 @@ class TaskActionsController < ApplicationController
   end
 
   private
-
-  def set_task
-    @task = Task.find(params[:id])
-  end
 
   def task_action_params
     params.require(:task_action).permit(:task_id, :user_id, :action)
