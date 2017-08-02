@@ -81,9 +81,8 @@ ActiveRecord::Schema.define(version: 20170715081033) do
   create_table "task_actions", force: :cascade do |t|
     t.integer  "task_id"
     t.integer  "user_id"
-    t.string   "action",     default: "", null: false
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["task_id"], name: "index_task_actions_on_task_id", using: :btree
     t.index ["user_id"], name: "index_task_actions_on_user_id", using: :btree
   end
