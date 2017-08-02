@@ -9,14 +9,12 @@ li.task
   = form_for TaskAction.new do |f|
 
     - if task.complete?
-      = link_to "Destroy", task.task_actions.last, method: :delete, class="destroy-link"
+      = link_to "Destroy", task.task_actions.last, method: :delete, class: "destroy-link"
     - else
       = f.button :submit do
         |
         end
 
-
-    = f.hidden_field :action, value: type_of_action_when(task.complete?)
     = f.hidden_field :task_id, value: task.id
     = f.hidden_field :user_id, value: current_user.id
 

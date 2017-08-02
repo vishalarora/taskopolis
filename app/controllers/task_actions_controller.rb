@@ -6,7 +6,7 @@ class TaskActionsController < ApplicationController
     task = @task_action.task
 
     if @task_action.save
-      task.update!(complete: true)
+      update_task(@task_action.task, true)
       redirect_to :back, notice: "Task action was successfully created."
     else
       redirect_to :back, alert: "Oops, something went wrong.  Try that again."
@@ -14,7 +14,7 @@ class TaskActionsController < ApplicationController
   end
 
   def destroy
-    @task_action.task.update!(complete: false)
+    update_task(@task_action.task, false)
     @task_action.destroy
     redirect_to :back, notice: "Task Action was successfully destroyed."
   end
@@ -23,6 +23,10 @@ class TaskActionsController < ApplicationController
 
   def set_task_action
     @task_action = TaskAction.find(params[:id])
+  end
+
+  def update_task(task, complete)
+    task.update!(complete: complete)
   end
 
   def task_action_params
