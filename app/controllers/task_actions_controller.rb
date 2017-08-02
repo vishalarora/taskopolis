@@ -3,7 +3,6 @@ class TaskActionsController < ApplicationController
 
   def create
     @task_action = TaskAction.new(task_action_params)
-    task = @task_action.task
 
     if @task_action.save
       update_task(@task_action.task, true)
@@ -30,6 +29,6 @@ class TaskActionsController < ApplicationController
   end
 
   def task_action_params
-    params.require(:task_action).permit(:task_id, :user_id,)
+    params.require(:task_action).permit(:task_id, :user_id)
   end
 end
