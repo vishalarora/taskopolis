@@ -9,9 +9,9 @@ li.task
   = form_for TaskAction.new do |f|
 
     - if task.complete?
-      = link_to "Destroy", task.task_actions.last, method: :delete, class: "destroy-link"
+      = link_to "", task.task_actions.last, method: :delete, class: "task-complete-link complete"
     - else
-      = f.button :submit do
+      = f.button :submit, class: "task-complete-link" do
         |
         end
 
