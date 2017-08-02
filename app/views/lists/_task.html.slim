@@ -9,9 +9,7 @@ li.task
   = form_for TaskAction.new do |f|
 
     - if task.complete?
-      = f.button :submit do
-        | ✓
-        end
+      = link_to "Destroy", task.task_actions.last, method: :delete, class="destroy-link"
     - else
       = f.button :submit do
         |
