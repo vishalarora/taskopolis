@@ -10,6 +10,6 @@ header
         li = link_to "Register", new_user_registration_path
         li = link_to "Log in", new_user_session_path
 
-- if current_user.points
-  .points
-    h1 = ("You have <b>#{current_user.points}</b> points.").html_safe
+  - if current_user
+    .points
+      h1 = ("You have <b>#{current_user.points}</b> points.").html_safe

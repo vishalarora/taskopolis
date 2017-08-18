@@ -1,16 +1,28 @@
-= form_for task, remote: true do |f|
-  - if task.errors.any?
-    #error_explanation
-      ul
-        - task.errors.full_messages.each do |message|
-          li = message
-  li.task
-    = f.check_box :complete, onChange: "$(this.form).submit()", class: "task-complete-checkbox"
-    noscript
-      = f.submit
+- if task.errors.any?
+  #error_explanation
+    ul
+      -task.errors.full_messages.each do |message|
+        li = message
 
-    = link_to "#{task.description}", task_path(task), class: ('completed' if task.complete?)
+li.task
 
-    - if task.due_date
-      span.due-date [class=("past-due" if task.due_date < Date.today)]
-        = "Due: #{pretty_date task.due_date}"
+  = form_for TaskAction.new do |f|
+
+    - if task.complete?
+      = link_to "", task.task_actions.last, method: :delete, class: "task-complete-link complete"
+    - else
+      = f.button :submit, class: "task-complete-link" do
+        |
+        end
+
+    = f.hidden_field :task_id, value: task.id
+    = f.hidden_field :user_id, value: current_user.id
+
+
+    = link_to "#{task.description}", task_path(task), class: ("completed" if task.complete?)
+
+
+  - if task.due_date
+    span.due-date [class=("past-due" if task.due_date < Date.today)]
+      = "Due: #{pretty_date task.due_date}"
+
