@@ -12,6 +12,12 @@ module Features
   include Formulaic::Dsl
 end
 
+Sidekiq::Testing.inline!
+
+RSpec::Sidekiq.configure do |config|
+  config.warn_when_jobs_not_processed_by_sidekiq = false
+end
+
 RSpec.configure do |config|
   config.include Features, type: :feature
   config.infer_base_class_for_anonymous_controllers = false

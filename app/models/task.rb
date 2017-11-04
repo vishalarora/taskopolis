@@ -1,6 +1,7 @@
 class Task < ApplicationRecord
   belongs_to :list
   belongs_to :user
+  has_many :task_actions
 
   validates :description, presence: true
   validates :due_date, presence: true
@@ -18,5 +19,4 @@ class Task < ApplicationRecord
   def set_last_synced_date
     self.update!(last_synced_at: DateTime.now)
   end
-
 end

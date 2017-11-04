@@ -4,6 +4,7 @@ class ListsController < ApplicationController
 
   def index
     @lists = current_user.lists
+    @resources = Resource.all
   end
 
   def show

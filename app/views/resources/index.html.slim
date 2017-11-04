@@ -1,0 +1,21 @@
+h1 Marketplace
+
+table
+  thead
+    tr
+      th Name
+      th Value
+      th
+      th
+
+  tbody
+    - @resources.each do |resource|
+      tr
+        td = resource.name
+        td = resource.value
+        td = link_to 'Edit', edit_resource_path(resource)
+        td = link_to 'Destroy', resource, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Resource', new_resource_path

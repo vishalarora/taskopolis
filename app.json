@@ -7,9 +7,6 @@
     "APPLICATION_HOST":{
       "required":true
     },
-    "EMAIL_RECIPIENTS":{
-      "required":true
-    },
     "HEROKU_APP_NAME": {
       "required":true
     },
@@ -28,10 +25,19 @@
     "SMTP_DOMAIN":{
       "required":true
     },
-    "SMTP_PASSWORD":{
+    "SENDGRID_USERNAME":{
       "required":true
     },
-    "SMTP_USERNAME":{
+    "SENDGRID_PASSWORD":{
+      "required":true
+    },
+    "SENDGRID_API_KEY":{
+      "required":true
+    },
+    "DEFAULT_MAILER_DOMAIN":{
+      "required":true
+    },
+    "DEFAULT_SEND_FROM_ADDRESS":{
       "required":true
     }
   },

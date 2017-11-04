@@ -18,8 +18,12 @@ gem "suspenders"
 gem "title"
 gem "uglifier"
 gem "devise"
+gem "sidekiq"
 gem "slim"
 gem "slim-rails"
+gem "raygun4ruby"
+gem "high_voltage"
+gem "merit"
 
 group :development do
   gem "listen"
@@ -41,6 +45,7 @@ group :development, :test do
   gem "pry-byebug"
   gem "pry-rails"
   gem "rspec-rails", "~> 3.5.0.beta4"
+  gem "rspec-sidekiq"
 end
 
 group :development, :staging do

@@ -1,4 +1,12 @@
 FactoryGirl.define do
+  factory :task_action do
+  end
+
+  factory :resource do
+    name "MyString"
+    value 1
+  end
+
   factory :list do
     name "MyString"
   end
@@ -10,5 +18,8 @@ FactoryGirl.define do
   end
 
   factory :user do
+    first_name "John"
+    last_name "Doe"
+    email "john@example.com"
   end
 end
